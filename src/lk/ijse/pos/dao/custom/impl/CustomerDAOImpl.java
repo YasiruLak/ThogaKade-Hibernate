@@ -114,7 +114,25 @@ public class CustomerDAOImpl implements CustomerDAO {
 
     @Override
     public boolean ifCustomerExist(String id) throws SQLException, ClassNotFoundException {
+        Session session = FactoryConfiguration.getInstance().getSession();
+
+        Transaction transaction = session.beginTransaction();
+
+        Query query = session.createQuery("SELECT id FROM Customer WHERE id=:id");
+
+        String code = (String) query.setParameter("id", id).uniqueResult();
+
+        if (code!=null){
+
+            return true;
+        }
+
+        transaction.commit();
+
+        session.close();
+
         return false;
+
     }
 
     @Override
@@ -123,7 +141,7 @@ public class CustomerDAOImpl implements CustomerDAO {
 
         Transaction transaction = session.beginTransaction();
 
-        Query query = session.createQuery("SELECT id FROM Customer ORDER BY id DESC");
+        NativeQuery query = session.createSQLQuery("SELECT id FROM Customer ORDER BY id DESC LIMIT 1");
 
         String id = (String) query.uniqueResult();
 

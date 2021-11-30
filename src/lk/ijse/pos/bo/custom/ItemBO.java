@@ -12,13 +12,13 @@ import java.util.ArrayList;
  **/
 public interface ItemBO extends SuperBO {
 
-    ArrayList<ItemDTO> getAllItems() throws SQLException, ClassNotFoundException;
+    ArrayList<ItemDTO> getAllItems() throws Exception;
 
-    boolean deleteItem(String code) throws SQLException, ClassNotFoundException;
+    boolean deleteItem(String code) throws Exception;
 
-    boolean addItem(ItemDTO dto) throws SQLException, ClassNotFoundException;
+    boolean addItem(ItemDTO dto) throws Exception;
 
-    boolean updateItem(ItemDTO dto) throws SQLException, ClassNotFoundException;
+    boolean updateItem(ItemDTO dto) throws Exception;
 
     boolean ifItemExist(String code) throws SQLException, ClassNotFoundException;
 

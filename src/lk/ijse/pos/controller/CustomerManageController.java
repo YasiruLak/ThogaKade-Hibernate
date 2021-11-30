@@ -215,8 +215,8 @@ public class CustomerManageController {
         } else {
             try {
                 if (!existCustomer(id)) {
-                    new Alert(Alert.AlertType.ERROR,
-                            "There is no such customer associated with the id " + id).show();
+                    new Alert(Alert.AlertType.CONFIRMATION,
+                            "Successfully Update" + id).show();
                 }
                 CustomerDTO customerDTO = new CustomerDTO(id, title, name, address, city, province, postalCode);
                 try {

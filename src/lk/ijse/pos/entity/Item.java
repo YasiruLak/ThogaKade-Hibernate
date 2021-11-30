@@ -1,12 +1,16 @@
 package lk.ijse.pos.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.math.BigDecimal;
 
 /**
  * @author : Yasiru Dahanayaka
  * @since : 0.1.0
  **/
+@Entity
 public class Item implements SuperEntity {
+    @Id
     private String itemCode;
     private String description;
     private String packSize;

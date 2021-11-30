@@ -12,5 +12,6 @@ import java.util.ArrayList;
  **/
 public interface CustomerDAO extends SuperDAO<Customer, String> {
     boolean ifCustomerExist(String id) throws SQLException, ClassNotFoundException;
+
     String generateNewID() throws SQLException, ClassNotFoundException;
 }
