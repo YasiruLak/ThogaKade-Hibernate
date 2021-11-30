@@ -122,7 +122,7 @@ public class CustomerDAOImpl implements CustomerDAO {
 
         String code = (String) query.setParameter("id", id).uniqueResult();
 
-        if (code!=null){
+        if (code != null) {
 
             return true;
         }

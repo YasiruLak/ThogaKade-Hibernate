@@ -14,9 +14,9 @@ import org.hibernate.cfg.Configuration;
  **/
 public class FactoryConfiguration {
     private static FactoryConfiguration factoryConfiguration;
-    private SessionFactory sessionFactory;
+    private final SessionFactory sessionFactory;
 
-    private FactoryConfiguration(){
+    private FactoryConfiguration() {
         Configuration configuration = new Configuration().configure()
                 .addAnnotatedClass(Customer.class)
                 .addAnnotatedClass(Item.class)
@@ -25,11 +25,11 @@ public class FactoryConfiguration {
         sessionFactory = configuration.buildSessionFactory();
     }
 
-    public static FactoryConfiguration getInstance(){
+    public static FactoryConfiguration getInstance() {
         return (factoryConfiguration == null) ? factoryConfiguration = new FactoryConfiguration() : factoryConfiguration;
     }
 
-    public Session getSession(){
+    public Session getSession() {
         return sessionFactory.openSession();
     }
 }

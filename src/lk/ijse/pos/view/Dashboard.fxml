@@ -1,61 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
-
-<AnchorPane fx:id="root" prefHeight="430.0" prefWidth="672.0" stylesheets="@assests/style/Style..css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.pos.controller.DashboardController">
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:id="root" prefHeight="430.0" prefWidth="672.0"
+            stylesheets="@assests/style/Style..css" xmlns="http://javafx.com/javafx/8.0.171"
+            fx:controller="lk.ijse.pos.controller.DashboardController">
     <children>
-        <Label fx:id="lblMenu" alignment="CENTER" layoutX="43.0" layoutY="319.0" prefHeight="38.0" prefWidth="586.0" text="Welcome" textAlignment="CENTER" textFill="#0a39f7">
+        <Label fx:id="lblMenu" alignment="CENTER" layoutX="43.0" layoutY="319.0" prefHeight="38.0" prefWidth="586.0"
+               text="Welcome" textAlignment="CENTER" textFill="#0a39f7">
             <font>
-                <Font size="26.0" />
+                <Font size="26.0"/>
             </font>
         </Label>
-        <Label fx:id="lblDescription" alignment="CENTER" layoutX="44.0" layoutY="351.0" prefHeight="25.0" prefWidth="586.0" text="Please select one of above main operations to proceed">
+        <Label fx:id="lblDescription" alignment="CENTER" layoutX="44.0" layoutY="351.0" prefHeight="25.0"
+               prefWidth="586.0" text="Please select one of above main operations to proceed">
             <font>
-                <Font size="16.0" />
+                <Font size="16.0"/>
             </font>
         </Label>
-        <ImageView fitHeight="345.0" fitWidth="402.0" layoutX="323.0" layoutY="-116.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fitHeight="345.0" fitWidth="402.0" layoutX="323.0" layoutY="-116.0" pickOnBounds="true"
+                   preserveRatio="true">
             <image>
-                <Image url="@assests/image/logo.png" />
+                <Image url="@assests/image/logo.png"/>
             </image>
         </ImageView>
-        <ImageView fx:id="imgCustomer" fitHeight="100.0" fitWidth="100.0" layoutX="284.0" layoutY="165.0" onMouseClicked="#navigate" onMouseEntered="#playMouseEnterAnimation" onMouseExited="#playMouseExitAnimation" pickOnBounds="true" preserveRatio="true">
+        <ImageView fx:id="imgCustomer" fitHeight="100.0" fitWidth="100.0" layoutX="284.0" layoutY="165.0"
+                   onMouseClicked="#navigate" onMouseEntered="#playMouseEnterAnimation"
+                   onMouseExited="#playMouseExitAnimation" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@assests/image/business_building_96px.png" />
-            </image>
-            <cursor>
-                <Cursor fx:constant="HAND" />
-            </cursor>
-        </ImageView>
-        <ImageView fx:id="imgOrders" fitHeight="100.0" fitWidth="100.0" layoutX="453.0" layoutY="165.0" onMouseClicked="#navigate" onMouseEntered="#playMouseEnterAnimation" onMouseExited="#playMouseExitAnimation" pickOnBounds="true" preserveRatio="true">
-            <image>
-                <Image url="@assests/image/add_shopping_cart_96px.png" />
+                <Image url="@assests/image/business_building_96px.png"/>
             </image>
             <cursor>
-                <Cursor fx:constant="HAND" />
+                <Cursor fx:constant="HAND"/>
             </cursor>
         </ImageView>
-        <Label alignment="CENTER" layoutX="15.0" layoutY="67.0" prefHeight="40.0" prefWidth="266.0" text="Point of Sale System " textAlignment="CENTER" textFill="#6a9bfc">
+        <ImageView fx:id="imgOrders" fitHeight="100.0" fitWidth="100.0" layoutX="453.0" layoutY="165.0"
+                   onMouseClicked="#navigate" onMouseEntered="#playMouseEnterAnimation"
+                   onMouseExited="#playMouseExitAnimation" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@assests/image/add_shopping_cart_96px.png"/>
+            </image>
+            <cursor>
+                <Cursor fx:constant="HAND"/>
+            </cursor>
+        </ImageView>
+        <Label alignment="CENTER" layoutX="15.0" layoutY="67.0" prefHeight="40.0" prefWidth="266.0"
+               text="Point of Sale System " textAlignment="CENTER" textFill="#6a9bfc">
             <font>
-                <Font size="28.0" />
+                <Font size="28.0"/>
             </font>
         </Label>
         <Label layoutX="63.0" layoutY="14.0" text="WELCOME" textFill="#5a61f5">
             <font>
-                <Font size="36.0" />
+                <Font size="36.0"/>
             </font>
         </Label>
-        <ImageView fx:id="imgItem" fitHeight="100.0" fitWidth="100.0" layoutX="120.0" layoutY="165.0" onMouseClicked="#navigate" onMouseEntered="#playMouseEnterAnimation" onMouseExited="#playMouseExitAnimation" pickOnBounds="true" preserveRatio="true">
+        <ImageView fx:id="imgItem" fitHeight="100.0" fitWidth="100.0" layoutX="120.0" layoutY="165.0"
+                   onMouseClicked="#navigate" onMouseEntered="#playMouseEnterAnimation"
+                   onMouseExited="#playMouseExitAnimation" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@assests/image/ingredients_96px.png" />
+                <Image url="@assests/image/ingredients_96px.png"/>
             </image>
             <cursor>
-                <Cursor fx:constant="HAND" />
+                <Cursor fx:constant="HAND"/>
             </cursor>
         </ImageView>
     </children>

@@ -10,21 +10,21 @@ import lk.ijse.pos.dao.custom.impl.OrderDetailsDAOImpl;
  * @since : 0.1.0
  **/
 public class DAOFactory {
-    private static  DAOFactory daoFactory;
+    private static DAOFactory daoFactory;
 
-    private DAOFactory(){
+    private DAOFactory() {
 
     }
 
-    public static DAOFactory getDaoFactory(){
-        if (daoFactory == null){
+    public static DAOFactory getDaoFactory() {
+        if (daoFactory == null) {
             daoFactory = new DAOFactory();
         }
         return daoFactory;
     }
 
-    public SuperDAO getDAO(DAOTypes types){
-        switch (types){
+    public SuperDAO getDAO(DAOTypes types) {
+        switch (types) {
             case CUSTOMER:
                 return new CustomerDAOImpl();
             case ITEM:
@@ -38,7 +38,7 @@ public class DAOFactory {
         }
     }
 
-    public enum DAOTypes{
+    public enum DAOTypes {
         CUSTOMER, ITEM, ORDER, ORDERDETAILS
     }
 }

@@ -4,7 +4,6 @@ import lk.ijse.pos.dao.SuperDAO;
 import lk.ijse.pos.entity.Customer;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
 
 /**
  * @author : Yasiru Dahanayaka

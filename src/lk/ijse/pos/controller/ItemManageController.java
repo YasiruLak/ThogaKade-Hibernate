@@ -30,6 +30,7 @@ import java.util.ArrayList;
  * @since : 0.1.0
  **/
 public class ItemManageController {
+    private final ItemBO itemBO = (ItemBO) BOFactory.getBoFactory().getBO(BOFactory.BoTypes.ITEM);
     public JFXTextField txtItemCode;
     public JFXTextField txtItemDescription;
     public JFXTextField txtItemUnitPrice;
@@ -37,13 +38,11 @@ public class ItemManageController {
     public JFXButton btnAddNewItem;
     public JFXComboBox cmbItemSize;
     public JFXButton btnSave;
-    public TableView<ItemTM>tblItems;
+    public TableView<ItemTM> tblItems;
     public AnchorPane root;
     public JFXButton btnDelete;
 
-    private final ItemBO itemBO = (ItemBO) BOFactory.getBoFactory().getBO(BOFactory.BoTypes.ITEM);
-
-    public void initialize(){
+    public void initialize() {
 
         tblItems.getColumns().get(0).setCellValueFactory(new PropertyValueFactory<>("itemCode"));
         tblItems.getColumns().get(1).setCellValueFactory(new PropertyValueFactory<>("description"));

@@ -2,7 +2,7 @@ package lk.ijse.pos.view.tdm;
 
 import java.math.BigDecimal;
 
-public class ItemTM implements Comparable<ItemTM>{
+public class ItemTM implements Comparable<ItemTM> {
 
     private String itemCode;
     private String description;

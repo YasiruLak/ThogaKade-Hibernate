@@ -42,7 +42,7 @@ public class ItemDAOImpl implements ItemDAO {
 
         query.setParameter("itemCode", itemCode);
 
-        if (query.executeUpdate() > 0){
+        if (query.executeUpdate() > 0) {
 
             transaction.commit();
 
@@ -81,7 +81,7 @@ public class ItemDAOImpl implements ItemDAO {
 
         Item item = session.get(Item.class, itemCode);
 
-        if (item != null){
+        if (item != null) {
 
             transaction.commit();
 
@@ -124,7 +124,7 @@ public class ItemDAOImpl implements ItemDAO {
 
         String code = (String) query.setParameter("itemCode", itemCode).uniqueResult();
 
-        if (code!=null){
+        if (code != null) {
 
             return true;
         }

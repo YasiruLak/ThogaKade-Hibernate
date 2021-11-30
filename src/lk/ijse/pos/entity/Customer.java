@@ -8,7 +8,7 @@ import javax.persistence.Id;
  * @since : 0.1.0
  **/
 @Entity
-public class Customer implements SuperEntity{
+public class Customer implements SuperEntity {
     @Id
     private String id;
     private String title;

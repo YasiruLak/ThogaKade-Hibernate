@@ -35,7 +35,7 @@ public class CustomerManageController {
     private final CustomerBO customerBO = (CustomerBO) BOFactory.getBoFactory().getBO(BOFactory.BoTypes.CUSTOMER);
 
     public AnchorPane root;
-    public TableView<CustomerTM>tblCustomers;
+    public TableView<CustomerTM> tblCustomers;
     public JFXTextField txtCustomerId;
     public JFXTextField txtCustomerName;
     public JFXTextField txtCustomerAddress;
@@ -183,11 +183,11 @@ public class CustomerManageController {
             new Alert(Alert.AlertType.ERROR, "Address should be at least 3 characters long").show();
             txtCustomerAddress.requestFocus();
             return;
-        }else if (!city.matches("^[A-z]{3,20}$")) {
+        } else if (!city.matches("^[A-z]{3,20}$")) {
             new Alert(Alert.AlertType.ERROR, "City should be at least 3 characters long").show();
             txtCustomerCity.requestFocus();
             return;
-        }else if (!postalCode.matches("^[0-9]{3,10}$")) {
+        } else if (!postalCode.matches("^[0-9]{3,10}$")) {
             new Alert(Alert.AlertType.ERROR, "Postal Code should be at least 3 characters long").show();
             txtCustomerPostalCode.requestFocus();
             return;

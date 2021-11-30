@@ -9,8 +9,8 @@ import java.util.ArrayList;
  * @author : Yasiru Dahanayaka
  * @since : 0.1.0
  **/
-public interface SuperDAO<Entity extends SuperEntity, ID extends Serializable>{
-    boolean add(Entity entity ) throws Exception;
+public interface SuperDAO<Entity extends SuperEntity, ID extends Serializable> {
+    boolean add(Entity entity) throws Exception;
 
     boolean delete(ID id) throws Exception;
 

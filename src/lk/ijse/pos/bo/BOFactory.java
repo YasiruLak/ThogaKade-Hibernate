@@ -11,19 +11,19 @@ import lk.ijse.pos.bo.custom.impl.OrderBOImpl;
 public class BOFactory {
     private static BOFactory boFactory;
 
-    private BOFactory(){
+    private BOFactory() {
 
     }
 
-    public static BOFactory getBoFactory(){
-        if (boFactory == null){
-            boFactory =  new BOFactory();
+    public static BOFactory getBoFactory() {
+        if (boFactory == null) {
+            boFactory = new BOFactory();
         }
         return boFactory;
     }
 
-    public SuperBO getBO(BoTypes types){
-        switch (types){
+    public SuperBO getBO(BoTypes types) {
+        switch (types) {
             case ITEM:
                 return new ItemBOImpl();
             case CUSTOMER:
@@ -35,7 +35,7 @@ public class BOFactory {
         }
     }
 
-    public enum BoTypes{
+    public enum BoTypes {
         CUSTOMER, ITEM, ORDER
     }
 }
