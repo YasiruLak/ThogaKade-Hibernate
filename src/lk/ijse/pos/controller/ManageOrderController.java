@@ -111,7 +111,12 @@ public class ManageOrderController {
                         if (!existCustomer(newValue + "")) {
                             new Alert(Alert.AlertType.ERROR, "There is no such customer associated with the id " + newValue + "").show();
                         }
-                        CustomerDTO customerDTO = OrderBO.searchCustomer(newValue + "");
+                        CustomerDTO customerDTO = null;
+                        try {
+                            customerDTO = OrderBO.searchCustomer(newValue + "");
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
                         txtCustomerName.setText(customerDTO.getName());
 
                     } catch (SQLException e) {
@@ -136,7 +141,12 @@ public class ManageOrderController {
                         new Alert(Alert.AlertType.ERROR, "There is no such item associated with the id " + newItemCode + "").show();
                     }
 
-                    ItemDTO item = OrderBO.searchItem(newItemCode + "");
+                    ItemDTO item = null;
+                    try {
+                        item = OrderBO.searchItem(newItemCode + "");
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
                     txtDescription.setText(item.getDescription());
                     txtUnitPrice.setText(item.getUnitPrice().setScale(2).toString());
                     Optional<OrderDetailTM> optOrderDetail = tblOrderDetails.getItems().stream().filter(detail -> detail.getCode().equals(newItemCode)).findFirst();
@@ -188,37 +198,33 @@ public class ManageOrderController {
     }
 
     private void loadAllCustomerIds() {
+        ArrayList<CustomerDTO> all = null;
         try {
-            ArrayList<CustomerDTO> all = OrderBO.getAllCustomers();
-            for (CustomerDTO customerDTO : all) {
-                cmbCustomerId.getItems().add(customerDTO.getId());
-            }
-        } catch (SQLException e) {
-            new Alert(Alert.AlertType.ERROR, "Failed to load customer ids").show();
-        } catch (ClassNotFoundException e) {
+            all = OrderBO.getAllCustomers();
+        } catch (Exception e) {
             e.printStackTrace();
+        }
+        for (CustomerDTO customerDTO : all) {
+            cmbCustomerId.getItems().add(customerDTO.getId());
         }
     }
 
     private void loadAllItemCodes() {
+        ArrayList<ItemDTO> all = null;
         try {
-            ArrayList<ItemDTO> all = OrderBO.getAllItems();
-            for (ItemDTO dto : all) {
-                cmbItemCode.getItems().add(dto.getItemCode());
-            }
-        } catch (SQLException e) {
-            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
-        } catch (ClassNotFoundException e) {
+            all = OrderBO.getAllItems();
+        } catch (Exception e) {
             e.printStackTrace();
+        }
+        for (ItemDTO dto : all) {
+            cmbItemCode.getItems().add(dto.getItemCode());
         }
     }
 
     public String generateNewOrderId() {
         try {
             return OrderBO.generateNewOrderId();
-        } catch (SQLException e) {
-            new Alert(Alert.AlertType.ERROR, "Failed to generate a new order id").show();
-        } catch (ClassNotFoundException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return null;
@@ -331,9 +337,7 @@ public class ManageOrderController {
     public ItemDTO findItem(String code) {
         try {
             return OrderBO.searchItem(code);
-        } catch (SQLException e) {
-            throw new RuntimeException("Failed to find the Item " + code, e);
-        } catch (ClassNotFoundException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return null;

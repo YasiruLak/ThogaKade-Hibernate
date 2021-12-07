@@ -17,21 +17,21 @@ public class OrderDetailsDAOImpl implements OrderDetailsDAO {
 
     @Override
     public boolean delete(String s) throws Exception {
-        return false;
+        throw new UnsupportedOperationException("Not Supported Yet");
     }
 
     @Override
     public boolean update(OrderDetails orderDetails) throws Exception {
-        return false;
+        throw new UnsupportedOperationException("Not Supported Yet");
     }
 
     @Override
     public OrderDetails search(String s) throws Exception {
-        return null;
+        throw new UnsupportedOperationException("Not Supported Yet");
     }
 
     @Override
     public ArrayList<OrderDetails> getAll() throws Exception {
-        return null;
+        throw new UnsupportedOperationException("Not Supported Yet");
     }
 }
