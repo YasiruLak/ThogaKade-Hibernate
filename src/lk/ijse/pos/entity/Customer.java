@@ -2,6 +2,8 @@ package lk.ijse.pos.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import java.util.List;
 
 /**
  * @author : Yasiru Dahanayaka
@@ -17,8 +19,21 @@ public class Customer implements SuperEntity {
     private String city;
     private String province;
     private String postalCode;
+    @OneToMany(mappedBy = "customer")
+    private List<Orders> orders;
 
     public Customer() {
+    }
+
+    public Customer(String id, String title, String name, String address, String city, String province, String postalCode, List<Orders> orders) {
+        this.id = id;
+        this.title = title;
+        this.name = name;
+        this.address = address;
+        this.city = city;
+        this.province = province;
+        this.postalCode = postalCode;
+        this.orders = orders;
     }
 
     public Customer(String id, String title, String name, String address, String city, String province, String postalCode) {
@@ -87,6 +102,14 @@ public class Customer implements SuperEntity {
         this.postalCode = postalCode;
     }
 
+    public List<Orders> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(List<Orders> orders) {
+        this.orders = orders;
+    }
+
     @Override
     public String toString() {
         return "Customer{" +
@@ -97,6 +120,7 @@ public class Customer implements SuperEntity {
                 ", city='" + city + '\'' +
                 ", province='" + province + '\'' +
                 ", postalCode='" + postalCode + '\'' +
+                ", orders=" + orders +
                 '}';
     }
 }

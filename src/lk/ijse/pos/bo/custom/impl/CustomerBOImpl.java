@@ -30,7 +30,8 @@ public class CustomerBOImpl implements CustomerBO {
 
     @Override
     public boolean addCustomer(CustomerDTO customerDTO) throws Exception {
-        return customerDAO.add(new Customer(customerDTO.getId(),
+        return customerDAO.add(new Customer(
+                customerDTO.getId(),
                 customerDTO.getTitle(),
                 customerDTO.getName(),
                 customerDTO.getAddress(),
@@ -41,8 +42,14 @@ public class CustomerBOImpl implements CustomerBO {
 
     @Override
     public boolean updateCustomer(CustomerDTO customerDTO) throws Exception {
-        return customerDAO.update(new Customer(customerDTO.getId(), customerDTO.getTitle(), customerDTO.getName(), customerDTO.getAddress(),
-                customerDTO.getCity(), customerDTO.getProvince(), customerDTO.getPostalCode()));
+        return customerDAO.update(new Customer(
+                customerDTO.getId(),
+                customerDTO.getTitle(),
+                customerDTO.getName(),
+                customerDTO.getAddress(),
+                customerDTO.getCity(),
+                customerDTO.getProvince(),
+                customerDTO.getPostalCode()));
 
     }
 

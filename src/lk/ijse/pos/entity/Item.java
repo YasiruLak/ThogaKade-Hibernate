@@ -2,7 +2,10 @@ package lk.ijse.pos.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import java.math.BigDecimal;
+import java.util.List;
 
 /**
  * @author : Yasiru Dahanayaka
@@ -16,6 +19,10 @@ public class Item implements SuperEntity {
     private String packSize;
     private BigDecimal unitPrice;
     private int qtyOnHand;
+    @OneToMany(mappedBy = "itemCode")
+    private List<OrderDetails> orderDetails;
+    @OneToMany(mappedBy = "qtyOnHand")
+    private List<OrderDetails> details;
 
     public Item() {
     }
@@ -76,6 +83,8 @@ public class Item implements SuperEntity {
                 ", packSize='" + packSize + '\'' +
                 ", unitPrice=" + unitPrice +
                 ", qtyOnHand=" + qtyOnHand +
+                ", orderDetails=" + orderDetails +
+                ", details=" + details +
                 '}';
     }
 }
